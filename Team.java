@@ -19,9 +19,48 @@ public class Team {
      * to sort the Members array.
      */
     public void mergeSortMembers() {
-        if (members.length  > 1){
-            Member[] firstHalf = new Member[members.length / 2];
-            HWUtils.copyOfRange(members, 0, members.length/2);
+
+        if(members.length > 1){
+            int length = members.length;
+            int middle = length / 2;
+
+            //Member[] leftArray = new Member[middle];
+            //Member[] rightArray = new Member[length - middle];
+
+            Member[] leftMembers = HWUtils.copyOfRange(this.members, 0, middle);
+            Member[] rightMembers = HWUtils.copyOfRange(this.members, middle, length);
+
+            Team leftTeam = new Team(leftMembers);
+            Team rightTeam = new Team(rightMembers);
+
+            leftTeam.mergeSortMembers();
+            rightTeam.mergeSortMembers();
+
+            mergeSki(this.members, leftMembers, rightMembers);
+
+            //mergeSort(leftMembers);
+            //mergeSort(rightMembers);
+//            Member[] mergedLeftHalf = mergeOnSplit(leftMembers);
+//            Member[] mergedRightHalf = mergeOnSplit(rightMembers);
+
+           // setMembers(HWUtils.merge(leftMembers, rightMembers));
+        //    this.members = HWUtils.merge(leftMembers, rightMembers);
         }
+    }
+    private static void mergeSki(Member[] original, Member[] left, Member[] right){
+        original = HWUtils.merge(left, right);
+    }
+    private void mergeSort(Member[] members) {
+        mergeSortMembers();
+            Team newTeam = new Team(members);
+//            newTeam.mergeSortMembers();
+        }
+
+    public Member[] getMembers () {
+        return members;
+    }
+
+    public void setMembers(Member[] members) {
+        this.members = members;
     }
 }
