@@ -48,16 +48,14 @@ public class Team {
         mergeSortMembers();
         int i = 0;
         members = recursiveMergeAllMembers(twoDMembers, members, i);
+        mergeSortMembers();
     }
     public Member[] recursiveMergeAllMembers(Member[][] twoDMembers, Member[] original, int i){
-
         if (i < twoDMembers.length - 1){
             Member[] mergedMembers = HWUtils.merge(twoDMembers[i], twoDMembers[i + 1]);
             recursiveMergeAllMembers(twoDMembers, mergedMembers, ++i);
         }
-
         return HWUtils.merge(members, original);
-
     }
 
     public Member searchMember(Member m) {
