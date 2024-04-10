@@ -26,7 +26,8 @@ public class Team {
     /**
      * The mergeSortMembers method uses the merge sort algorithm
      * to sort the Members array in non-decreasing order. This method does not take any arguments nor
-     * return anything.
+     * return anything. The mergeSortMembers calls a recursive helper method
+     * to apply the merge sort algorithm to the members array.
      */
     public void mergeSortMembers() {
         members = recursiveMergeMembers(members);
@@ -49,6 +50,8 @@ public class Team {
 
     /**
      * This method takes in a 2-D array of Member instances and does not return anything.
+     * The mergeAllMembers calls a recursive helper method to merge and sort the 2-D array passed in
+     * with the original members array.
      * @param twoDMembers 2-D array representing Member instances to be merged and sorted
      */
     public void mergeAllMembers(Member[][] twoDMembers) {
@@ -68,6 +71,8 @@ public class Team {
     /**
      * This method takes in a Member instance and returns the Member instance in the members
      * array that has the same name, subgroup, and hoursWorked.
+     * The searchMember array calls a recursive helper method recursively search for the member
+     * being searched for in the members array.
      * @param m Member representing a member in the team to be searched for in the
      * @return Member representing the found member
      */
@@ -103,6 +108,7 @@ public class Team {
 
     /**
      * This method does not take in any arguments and returns a deep copy of the members array in reversed sorted order.
+     * The reverseMembers method calls a recursive method which recursively reverses the order of the members array.
      * @return Member[] representing the array in reverse order
      */
     public Member[] reverseMembers() {
@@ -121,7 +127,8 @@ public class Team {
 
     /**
      * This method takes in no arguments, and returns a randomly selected leader for the
-     * BACKEND and FRONTEND group.
+     * BACKEND and FRONTEND group. The selectLeaderBoard calls a recursive helper method that recursively
+     * populates a BACKEND and FRONTEND ArrayList, to then randomly select a leader for each group.
      * @return ArrayList of type Member, where index 0 represents the leader for the FRONTEND group
      *         and index 1 represents the learder for the BACKEND group
      */
