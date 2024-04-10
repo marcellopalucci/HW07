@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * Driver class.
+ * @author mpalucci3
+ * @version 3.1
+ */
 public class Driver {
+    /**
+     * Driver class.
+     * @param args no args
+     */
     public static void main(String[] args) {
 
         Member member1 = new Member("Otto", Group.BACKEND, 60);
@@ -34,7 +43,7 @@ public class Driver {
         System.out.println("\nReversed:");
         printArray(reversedTeam);
 
-        ArrayList<Member> leaders = team1.selectLeaderBoard();
+        ArrayList<Member> leaders = team1.selectLeaderboard();
         System.out.println("\nLeaders:");
         System.out.println(leaders.get(0));
         System.out.println(leaders.get(1));
@@ -46,7 +55,7 @@ public class Driver {
 
     private static void printArray(Team t) {
         int size = t.getMembers().length;
-        for (Member i : t.getMembers()){
+        for (Member i : t.getMembers()) {
             System.out.println(i);
         }
     }

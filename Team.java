@@ -125,7 +125,7 @@ public class Team {
      * @return ArrayList of type Member, where index 0 represents the leader for the FRONTEND group
      *         and index 1 represents the learder for the BACKEND group
      */
-    public ArrayList<Member> selectLeaderBoard() {
+    public ArrayList<Member> selectLeaderboard() {
         ArrayList<Member> backEndGroup = new ArrayList<>();
         ArrayList<Member> frontEndGroup = new ArrayList<>();
         int i = 0;
@@ -156,8 +156,6 @@ public class Team {
         ArrayList<Member> leaders = new ArrayList<>(2);
         int frontEndSelector = new Random().nextInt(frontEnd.size());
         int backEndSelector = new Random().nextInt(backEnd.size());
-        //int frontEndSelector = (int) (Math.random() * frontEnd.size());
-        //int backEndSelector = (int) (Math.random() * backEnd.size());
         leaders.add(frontEnd.get(frontEndSelector));
         leaders.add(backEnd.get(backEndSelector));
 
